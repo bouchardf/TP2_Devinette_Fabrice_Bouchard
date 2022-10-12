@@ -1,0 +1,10 @@
+#Fabrice Bouchard
+#12 Octobre 2022
+#Ce programme affiche une figure d'étoile
+etoile = "*"
+
+nbEtoile = 11
+
+while nbEtoile >= 1:
+    print(etoile * nbEtoile)
+    nbEtoile = nbEtoile - 1
