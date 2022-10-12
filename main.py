@@ -10,11 +10,14 @@ nb_essai = 0
 fin_jeu = False
 rejouer = None
 
+borneUn = int(input("Entrez la première borne:"))
 
-print("J’ai choisi un nombre au hasard entre 0 et 1000. "
-      "À vous de le deviner...")
+borneDeux = int(input("Entrez la deuxième borne:"))
 
-nombre_aleatoire = randint(0, 1000)
+nombre_aleatoire = randint(borneUn, borneDeux)
+
+print("J’ai choisi un nombre au hasard entre", borneUn,"et" ,borneDeux,". À vous de le deviner...")
+
 
 #Mise en place de la boucle dans laquelle le jeu prend place
 while fin_jeu == False:
@@ -33,10 +36,13 @@ while fin_jeu == False:
 
         rejouer = input("Voulez rejouer? Entrer n pour quitter et o pour continuer.")
 
-        if rejouer == "n":      #Si le joueur veut rejouer
+        if rejouer == "n":      #Si le joueur veut quitter
             print("Merci et au revoir...")
             fin_jeu = True
 
-        elif rejouer == "o":       #Si le joueur veut quitter
+        elif rejouer == "o":       #Si le joueur veut rejouer
             nb_essai = 0
-            nombre_aleatoire = randint(0, 1000)
+            borneUn = int(input("Entrez la première borne:"))
+            borneDeux = int(input("Entrez la deuxième borne:"))
+            nombre_aleatoire = randint(borneUn, borneDeux)
+            print("J’ai choisi un nombre au hasard entre", borneUn, "et", borneDeux, ". À vous de le deviner...")
